@@ -1,0 +1,119 @@
+############################################################################### 
+## specify output image resolution
+
+Resolution 640 480
+
+############################################################################### 
+## define camera
+
+Camera
+0.0 2.5 15.0 	## possition [x y z]
+0.0 2.5 0.0		## lookat point [x y z]
+0.0 1.0 0.0		## up vector
+40.0 1.33		## field of view y, aspect
+1.0 50.0		## near and far clipping planes
+
+############################################################################### 
+## define some materials
+##
+
+## green material 
+Material 1
+0.0 1.0 0.0
+0.0 1.0 0.0
+1.0 1.0 1.0
+0.0 0.0 0.0
+80.0
+0.0
+0.0
+
+## white material 
+Material 2
+0.1 0.1 0.1
+2.0 2.0 2.0
+0.0 0.0 0.0
+0.0 0.0 0.0
+0.0
+0.0 
+0.0
+
+## black material 
+Material 3
+0.0 0.0 0.0
+0.0 0.0 0.0
+1.0 1.0 1.0
+0.0 0.0 0.0
+80.0
+0.0 
+0.8
+
+## red material 
+Material 4	## 1 is the ID
+1.0 0.0 0.0 ## ambient color [r g b]
+1.0 0.0 0.0 ## diffuse color
+1.0 1.0 1.0 ## specular color
+0.0 0.0 0.0 ## emission color
+500.0		## shininess
+0.0			## shadow factor [0=nothing, 1=black shadow, 0..1 blended with surface color]
+0.0			## reflection factor [0=nothing, 1=full reflection, 0..1 blended with surface color]
+
+## white 2 material 
+Material 5
+0.1 0.1 0.1
+2.0 2.0 2.0
+0.0 0.0 0.0
+0.0 0.0 0.0
+0.0
+0.5 
+0.5
+
+###############################################################################
+## objects
+##
+## define a sphere with radius [r], position [x y z] and material ID [m] 
+## as - Sphere r x y z m
+
+## worm
+Sphere 1.0 6.136 0.892 -3.041 1
+Sphere 1.0 4.942 0.0 -2.311 1
+Sphere 1.0 3.627 0.893 -1.581 1
+Sphere 1.0 2.338 1.431 -0.973 1
+Sphere 1.0 1.274 0.823 -0.486 1
+Sphere 1.0 0.121 0.0 0.0 1
+Sphere 1.0 -1.095 0.405 0.041 1
+Sphere 1.0 -2.027 1.316 0.0 1
+Sphere 1.0 -2.635 2.451 0.041 1
+Sphere 1.364 -2.919 3.991 0.0 1
+Sphere 0.433 -2.378 4.316 1.009 2 ## white eye ball
+Sphere 0.433 -3.313 4.316 1.022 2 ## white eye ball
+Sphere 0.150 -3.330 4.356 1.445 3 ## black thingy in the white eye ball
+Sphere 0.150 -2.357 4.356 1.445 3 ## black thingy in the white eye ball 
+Sphere 0.139 -2.378 3.645 1.102 4 ## red mouth
+Sphere 0.139 -2.732 3.512 1.203 4 ## red mouth
+Sphere 0.139 -3.135 3.606 1.217 4 ## red mouth 
+
+## background plane
+Plane 0.0 1.0 0.0 0.75 5
+
+############################################################################### 
+## define lights
+##
+## define a point light source
+PointLight
+2.0 10.0 13.0 	## position [x y z]
+0.1 0.1 0.1  	## ambient color [r g b]
+10.0 10.0 10.0	## diffuse color 
+20.0 20.0 20.0	## specular color
+1.8 3.0 0.0		## attenuation [constant linear square]
+
+## define another light source
+PointLight
+-2.0 10.0 -2.0 	## position [x y z]
+0.1 0.1 0.1  	## ambient color [r g b]
+5.0 5.0 5.0		## diffuse color 
+20.0 20.0 20.0	## specular color
+1.8 3.0 0.0		## attenuation [constant linear square]
+
+
+
+

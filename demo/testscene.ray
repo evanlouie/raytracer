@@ -1,0 +1,96 @@
+############################################################################### 
+## specify output image resolution
+
+Resolution 640 480
+
+############################################################################### 
+## define camera
+
+Camera
+1.2434 1.2533 9.8429 	## possition [x y z]
+-0.1243 -0.1253 -0.9843	## lookat point [x y z]
+-0.0157 0.9921 -0.1243	## up vector
+30.0 1.33				## field of view y, aspect
+1.0 50.0				## near and far clipping planes
+
+############################################################################### 
+## define some materials
+##
+
+## 1st material [red]
+Material 1	## 1 is the ID
+1.0 0.0 0.0 ## ambient color [r g b]
+1.0 0.0 0.0 ## diffuse color
+1.0 1.0 1.0 ## specular color
+0.0 0.0 0.0 ## emission color
+500.0		## shininess
+0.0			## shadow factor [0=nothing, 1=black shadow, 0..1 blended with surface color]
+0.5			## reflection factor [0=nothing, 1=full reflection, 0..1 blended with surface color]
+
+## 2nd material [green]
+Material 2
+0.0 1.0 0.0
+0.0 1.0 0.0
+1.0 1.0 1.0
+0.0 0.0 0.0
+80.0
+0.0
+0.8
+
+## 3rd material [blue]
+Material 3
+0.0 0.0 1.0
+0.0 0.0 1.0
+1.0 1.0 1.0
+0.0 0.0 0.0
+40.0
+0.0
+0.1
+
+## 3rd material [white]
+Material 4
+0.1 0.1 0.1
+2.0 2.0 2.0
+0.0 0.0 0.0
+0.0 0.0 0.0
+0.0
+0.6 ## shadows
+0.0
+
+###############################################################################
+## objects
+##
+## define a sphere with radius [r], position [x y z] and material ID [m] 
+## as - Sphere r x y z m
+
+## 1st sphere
+Sphere 1.0 -1.0 0.5 -0.25 1
+## 2nd sphere
+Sphere 1.5 2.0 1.0 -0.5 2
+## 3rd sphere
+Sphere 0.5 0.5 -0.75 0.5 3
+## background plane
+Plane 0.0 1.0 0.0 1.25 4
+
+############################################################################### 
+## define lights
+##
+## define a point light source
+PointLight
+2.0 10.0 3.0 	## position [x y z]
+0.1 0.1 0.1  	## ambient color [r g b]
+10.0 10.0 10.0	## diffuse color 
+20.0 20.0 20.0	## specular color
+1.8 3.0 0.0		## attenuation [constant linear square]
+
+## define another light source
+PointLight
+2.0 5.0 -2.0 	## position [x y z]
+0.1 0.1 0.1  	## ambient color [r g b]
+5.0 5.0 5.0		## diffuse color 
+20.0 20.0 20.0	## specular color
+1.8 3.0 0.0		## attenuation [constant linear square]
+
+
+
+
